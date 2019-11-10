@@ -1,24 +1,25 @@
-#include "main.h"
+#include "imx6u.h"
 /* 使能外设时钟 */
 void clk_enable()
 {
-	CCM_CCGR1 = 0XFFFFFFFF;
-	CCM_CCGR2 = 0XFFFFFFFF;
-	CCM_CCGR3 = 0XFFFFFFFF;
-	CCM_CCGR4 = 0XFFFFFFFF;
-	CCM_CCGR5 = 0XFFFFFFFF;
-	CCM_CCGR6 = 0XFFFFFFFF;
+	CCM->CCGR0 = 0XFFFFFFFF;
+	CCM->CCGR1 = 0XFFFFFFFF;
+	CCM->CCGR2 = 0XFFFFFFFF;
+	CCM->CCGR3 = 0XFFFFFFFF;
+	CCM->CCGR4 = 0XFFFFFFFF;
+	CCM->CCGR5 = 0XFFFFFFFF;
+	CCM->CCGR6 = 0XFFFFFFFF;
 }
 
 /* 初始化LED */
 void led_init(void)
 {
-	SW_MUX_GPIO1_IO03 = 0X5;	/* 复用为GPIO1_IO03 */
-	SW_PAD_GPIO1_IO03 = 0X10B0; /* 设置GPIO1_IO03电气属性 */
+	IOMUX_SW_MUX->GPIO1_IO03 = 0X5;	/* 复用为GPIO1_IO03 */
+	IOMUX_SW_PAD->GPIO1_IO03 = 0X10B0; /* 设置GPIO1_IO03电气属性 */
 
 	// GPIO初始化
-	GPIO1_GDIR = 0x8; /* 设置为输出 */
-	GPIO1_DR = 0X0;   /* 打开LED灯 */
+	GPIO1->GDIR = 0x8; /* 设置为输出 */
+	GPIO1->DR = 0X0;   /* 打开LED灯 */
 }
 
 /* 短延时 */
@@ -40,13 +41,13 @@ void delay(volatile unsigned int n)
 /* 打开LED灯 */
 void led_on(void)
 {
-	GPIO1_DR &= ~(1 << 3); /* bit3清零 */
+	GPIO1->DR &= ~(1 << 3); /* bit3清零 */
 }
 
 /* 关闭LED灯 */
 void led_off(void)
 {
-	GPIO1_DR |= (1 << 3);
+	GPIO1->DR |= (1 << 3);
 }
 int main(void)
 {
