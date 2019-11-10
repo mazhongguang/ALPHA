@@ -1,5 +1,4 @@
 #include "fsl_iomuxc.h"
-#include "MCIMX6Y2.h"
 /* 使能外设时钟 */
 void clk_enable()
 {
@@ -15,9 +14,11 @@ void clk_enable()
 /* 初始化LED */
 void led_init(void)
 {
-	IOMUX_SW_MUX->GPIO1_IO03 = 0X5;	/* 复用为GPIO1_IO03 */
-	IOMUX_SW_PAD->GPIO1_IO03 = 0X10B0; /* 设置GPIO1_IO03电气属性 */
+	/* 复用为GPIO1_IO03 */
+	IOMUXC_SetPinMux(IOMUXC_GPIO1_IO03_GPIO1_IO03, 0);
 
+	 /* 设置GPIO1_IO03电气属性 */
+	IOMUXC_SetPinConfig(IOMUXC_GPIO1_IO03_GPIO1_IO03, 0x10B0);
 	// GPIO初始化
 	GPIO1->GDIR = 0x8; /* 设置为输出 */
 	GPIO1->DR = 0X0;   /* 打开LED灯 */
@@ -60,10 +61,10 @@ int main(void)
 	while (1)
 	{
 		led_on();
-		delay(500);
+		delay(2000);
 
 		led_off();
-		delay(500);
+		delay(2000);
 	}
 	return 0;
 }

@@ -12,4 +12,3 @@ SECTIONS
 	.bss ALIGN(4) : {*(.bss) *(COMMON)}
 	__bss_end = . ;
 }
-

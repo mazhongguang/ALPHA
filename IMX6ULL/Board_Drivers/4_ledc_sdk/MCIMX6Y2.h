@@ -69,6 +69,7 @@
 #ifndef _MCIMX6Y2_H_
 #define _MCIMX6Y2_H_                             /**< Symbol preventing repeated inclusion */
 
+#include "cc.h"
 /** Memory map major version (memory maps with equal major version number are
  * compatible) */
 #define MCU_MEM_MAP_VERSION 0x0300U
