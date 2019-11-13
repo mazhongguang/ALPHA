@@ -28,7 +28,7 @@ void led_off(void)
 /* LED灯控制函数 */
 void led_switch(int led, int status)
 {
-	switch (status)
+	switch (led)
 	{
 		case LED0:
 			if(status == ON)
