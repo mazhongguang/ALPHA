@@ -32,7 +32,7 @@ int main(void)
 			}
 		}
 		i++;
-		if(i == 50)		/* 50*10=500ms */
+		if(i == 200)		/* 50*10=500ms */
 		{
 			i = 0;
 			led_state = !led_state;

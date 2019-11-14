@@ -9,6 +9,7 @@
                 "${workspaceFolder}/bsp/led",
                 "${workspaceFolder}/bsp/beep",
                 "${workspaceFolder}/bsp/key",
+                "${workspaceFolder}/bsp/gpio",
                 "${workspaceFolder}/imx6u",
                 "${workspaceFolder}/project"
             ],
