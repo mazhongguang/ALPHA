@@ -32,6 +32,7 @@ Reset_Handler:
 	bic r0, r0, #(1 << 0)		/* 关闭MMU */
 	MCR p15, 0, r0, c1, c0, 0	/* 将R0寄存器里面的数据写入到SCTLR里面 */
 
+#if 0
 	/* 设置中断向量偏移 */
 	ldr r0, =0x87800000
 	dsb
@@ -39,6 +40,7 @@ Reset_Handler:
 	MCR p15, 0, r0, c12, c0, 0	/* 设置VBAR寄存器=0x87800000 */
 	dsb
 	isb
+#endif
 
 	/* 设置处理器进入IRQ模式 */
 	mrs	r0,	cpsr		/* 读取CPSR到R0 */
@@ -140,7 +142,4 @@ bss_loop:
     stmia r0!, {r2}
     cmp r0, r1          /* 比较R0和R1里面的值 */
     ble bss_loop        /* 如果R0地址小于等于R1，继续清除BSS段 */
-	
-
-	b	main		/* 跳转到C语言main函数 */	
 	
