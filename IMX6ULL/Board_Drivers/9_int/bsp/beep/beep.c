@@ -17,7 +17,7 @@ void Beep_Init(void)
 /* 蜂鸣器控制函数 */
 void beep_switch(int status)
 {
-	if(status ==ON)
+	if(status == ON)
 		gpio_pinwrite(GPIO5, 1, 0);
 	else if (status == OFF)
 		gpio_pinwrite(GPIO5, 1, 1);

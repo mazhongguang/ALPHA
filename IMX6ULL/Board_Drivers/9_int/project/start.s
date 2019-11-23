@@ -1,12 +1,5 @@
 
 .global	_start
-.global _bss_start
-_bss_start:
-	.word __bss_start
-
-.global _bss_end
-_bss_end:
-	.word __bss_end
 
 _start:
 	ldr pc, =Reset_Handler			/* 复位中断服务函数 */
@@ -25,22 +18,39 @@ Reset_Handler:
 	 *	修改SCTR寄存器，采用读-改-写的方式
 	 */
 	MRC p15, 0, r0, c1, c0, 0	/* 读取SCTLR寄存器的数据到r0寄存器里面 */
-	bic r0, r0, #(1 << 12)		/* 关闭I Cache */
-	bic r0, r0, #(1 << 11)		/* 关闭分支预测 */
-	bic r0, r0, #(1 << 2)		/* 关闭D Cache */
-	bic r0, r0, #(1 << 1) 		/* 关闭对齐 */
-	bic r0, r0, #(1 << 0)		/* 关闭MMU */
+	bic r0, r0, #(1 << 12)      /* 关闭I Cache */
+	bic r0, r0, #(1 << 11)      /* 关闭分支预测 */
+    bic r0, r0, #(1 << 2)       /* 关闭D Cache*/
+ 	bic r0, r0, #(1 << 1)       /* 关闭对齐 */
+    bic r0, r0, #(1 << 0)       /* 关闭MMU */
 	MCR p15, 0, r0, c1, c0, 0	/* 将R0寄存器里面的数据写入到SCTLR里面 */
 
-#if 0
-	/* 设置中断向量偏移 */
-	ldr r0, =0x87800000
-	dsb
-	isb
-	MCR p15, 0, r0, c12, c0, 0	/* 设置VBAR寄存器=0x87800000 */
-	dsb
-	isb
-#endif
+@ #if 0
+@ 	/* 设置中断向量偏移 */
+@ 	ldr r0, =0x87800000
+@ 	dsb
+@ 	isb
+@ 	MCR p15, 0, r0, c12, c0, 0	/* 设置VBAR寄存器=0x87800000 */
+@ 	dsb
+@ 	isb
+@ #endif 
+
+.global _bss_start
+_bss_start:
+	.word __bss_start
+
+.global _bss_end
+_bss_end:
+	.word __bss_end
+
+	/* 清除BSS段 */
+	ldr r0, _bss_start
+	ldr r1, _bss_end
+	mov r2, #0
+bss_loop:
+    stmia r0!, {r2}
+    cmp r0, r1          /* 比较R0和R1里面的值 */
+    ble bss_loop        /* 如果R0地址小于等于R1，继续清除BSS段 */
 
 	/* 设置处理器进入IRQ模式 */
 	mrs	r0,	cpsr		/* 读取CPSR到R0 */
@@ -134,12 +144,3 @@ FIQ_Handler:
 	bx r0
 
 
-	/* 清除BSS段 */
-	ldr r0, _bss_start
-	ldr r1, _bss_end
-	mov r2, #0
-bss_loop:
-    stmia r0!, {r2}
-    cmp r0, r1          /* 比较R0和R1里面的值 */
-    ble bss_loop        /* 如果R0地址小于等于R1，继续清除BSS段 */
-	

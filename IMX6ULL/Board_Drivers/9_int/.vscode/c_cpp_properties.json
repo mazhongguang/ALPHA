@@ -11,6 +11,8 @@
                 "${workspaceFolder}/bsp/key",
                 "${workspaceFolder}/bsp/gpio",
                 "${workspaceFolder}/imx6u",
+                "${workspaceFolder}/bsp/exti",
+                "${workspaceFolder}/bsp/int",
                 "${workspaceFolder}/project"
             ],
             "defines": [],

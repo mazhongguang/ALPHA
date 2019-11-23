@@ -18,8 +18,8 @@ void gpio_init(GPIO_Type *base, int pin, gpio_pin_config_t *config)
 
 /* 控制GPIO高低电平 */
 void gpio_pinwrite(GPIO_Type *base, int pin, int value)
-	{
-	if(value == 0)		/* 写0 */
+{
+	if (value == 0) /* 写0 */
 		{
 			base->DR &= ~(1 << pin);
 		}
@@ -74,9 +74,9 @@ void gpio_intconfig (GPIO_Type *base, unsigned int pin,
     }
   switch (pin_int_mode)
     {
-		case kGPIO_IntLowLevel:
-			*icr &= ~(3 << (2 * icrShift));
-			break;
+		case 	kGPIO_IntLowLevel:
+				*icr &= ~(3 << (2 * icrShift));
+				break;
 		case	kGPIO_IntHighLevel:
 				*icr &= ~(3 << (2 * icrShift));
 				*icr |= (1 << (2 * icrShift));
@@ -93,6 +93,6 @@ void gpio_intconfig (GPIO_Type *base, unsigned int pin,
 				base->EDGE_SEL |= (1 << pin);
 				break;
 		default:
-			break;
+				break;
     }
 }

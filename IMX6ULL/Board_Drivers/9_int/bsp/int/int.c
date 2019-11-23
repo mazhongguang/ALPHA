@@ -26,9 +26,10 @@ void system_register_irqhandler(IRQn_Type irq,system_irq_handler_t handler,void 
 void int_init(void)
 {
 	GIC_Init();
+	system_irqtable_init();
 
 	/* 中断向量偏移设置 */
-	__set_VBAR(0x87800000);
+	__set_VBAR((uint32_t)0x87800000);
 
 }
 
