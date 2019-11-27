@@ -1,2 +1,2 @@
 #!/bin/bash
-./imxdownload uart.bin /dev/sda
+./imxdownload printf.bin /dev/sda

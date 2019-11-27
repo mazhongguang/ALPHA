@@ -115,6 +115,8 @@ get_python_inc(),
 'bsp/led',
 '-isystem',
 'bsp/uart',
+'-isystem',
+'stdio/include',
 ]
 
 # Clang automatically sets the '-std=' flag to 'c++14' for MSVC 2015 or later,

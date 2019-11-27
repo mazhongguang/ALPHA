@@ -1,7 +1,7 @@
 #include "vsprintf.h"
 #include "string.h"
 #include "printf.h"
-#include "bsp_uart.h"
+#include "uart.h"
 
 extern void putc(unsigned char c);
 extern unsigned char getc(void);
