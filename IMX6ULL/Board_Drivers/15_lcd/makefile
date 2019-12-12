@@ -21,7 +21,8 @@ INCUDIRS		:= 	imx6u	\
 					bsp/keyfilter \
 					bsp/int \
 					bsp/lcd \
-					stdio/include
+					stdio/include \
+					project
 
 SRCDIRS			:= 	project	\
 					bsp/clk	\
@@ -68,4 +69,4 @@ $(COBJS) : obj/%.o :%.c
 	$(CC) -Wall -Wa,-mimplicit-it=thumb -nostdlib -fno-builtin -c -O2 $(INCLUDE) -o $@ $<
 
 clean:
-	rm -rf *.elf *.bin *.dis $(OBJS)
+	rm -rf *.elf *.bin *.dis $(OBJS) 

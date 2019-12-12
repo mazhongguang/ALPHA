@@ -271,4 +271,3 @@ void lcd_show_string(unsigned short x,unsigned short y,
     }  
 }
 
-

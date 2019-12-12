@@ -12,6 +12,7 @@
 #include "stdio.h"
 #include "lcd.h"
 #include "lcdapi.h"
+#include "display_img.h"
 
 int main(void)
 {
@@ -30,8 +31,10 @@ int main(void)
 	lcd_show_string(10, 60, 272, 32, 32,(char *)"MYLOVE IS QINGER!");
 	lcd_show_string(10, 110, 272, 32, 32,(char *)"MYLOVE IS QINGER!");
 	lcd_show_string(10, 160, 272, 32, 32,(char *)"MYLOVE IS QINGER!");
+	display_img(0,0);
 	while (1)
 	{
+	/*display_img(400,200);*/
 		state = !state;
 		led_switch(LED0, state);
 		delay_ms(1000);
