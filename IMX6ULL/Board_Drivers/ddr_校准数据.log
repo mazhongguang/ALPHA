@@ -1,0 +1,217 @@
+
+============================================
+        DDR Stress Test (2.9.0) 
+        Build: Jul  6 2018, 15:05:55
+        NXP Semiconductors.
+============================================
+
+============================================
+        Chip ID
+CHIP ID = i.MX6 UltraLiteLite(0x65)
+Internal Revision = TO1.1
+============================================
+
+============================================
+        Boot Configuration
+SRC_SBMR1(0x020d8004) = 0x00000002
+SRC_SBMR2(0x020d801c) = 0x01000001
+============================================
+
+ARM Clock set to 528MHz
+
+============================================
+        DDR configuration
+DDR type is DDR3 
+Data width: 16, bank num: 8
+Row size: 15, col size: 10
+Chip select CSD0 is used 
+Density per chip select: 512MB 
+============================================
+
+Current Temperature: 54
+============================================
+
+DDR Freq: 396 MHz 
+
+ddr_mr1=0x00000000
+Start write leveling calibration...
+running Write level HW calibration
+Write leveling calibration completed, update the following registers in your initialization script
+    MMDC_MPWLDECTRL0 ch0 (0x021b080c) = 0x00000000
+    MMDC_MPWLDECTRL1 ch0 (0x021b0810) = 0x00070007
+Write DQS delay result:
+   Write DQS0 delay: 0/256 CK
+   Write DQS1 delay: 0/256 CK
+
+Starting DQS gating calibration
+. HC_DEL=0x00000000	result[00]=0x00000000
+. HC_DEL=0x00000001	result[01]=0x00000000
+. HC_DEL=0x00000002	result[02]=0x00000000
+. HC_DEL=0x00000003	result[03]=0x00000011
+. HC_DEL=0x00000004	result[04]=0x00000011
+. HC_DEL=0x00000005	result[05]=0x00000011
+. HC_DEL=0x00000006	result[06]=0x00000011
+. HC_DEL=0x00000007	result[07]=0x00000011
+. HC_DEL=0x00000008	result[08]=0x00000011
+. HC_DEL=0x00000009	result[09]=0x00000011
+. HC_DEL=0x0000000A	result[0A]=0x00000011
+. HC_DEL=0x0000000B	result[0B]=0x00000011
+. HC_DEL=0x0000000C	result[0C]=0x00000011
+. HC_DEL=0x0000000D	result[0D]=0x00000011
+DQS HC delay value low1 = 0x00000000, high1=0x00000202
+
+loop ABS offset to get HW_DG_HIGH
+. ABS_OFFSET=0x00000000	result[00]=0x00000000
+. ABS_OFFSET=0x00000004	result[01]=0x00000000
+. ABS_OFFSET=0x00000008	result[02]=0x00000000
+. ABS_OFFSET=0x0000000C	result[03]=0x00000000
+. ABS_OFFSET=0x00000010	result[04]=0x00000000
+. ABS_OFFSET=0x00000014	result[05]=0x00000000
+. ABS_OFFSET=0x00000018	result[06]=0x00000000
+. ABS_OFFSET=0x0000001C	result[07]=0x00000000
+. ABS_OFFSET=0x00000020	result[08]=0x00000000
+. ABS_OFFSET=0x00000024	result[09]=0x00000000
+. ABS_OFFSET=0x00000028	result[0A]=0x00000000
+. ABS_OFFSET=0x0000002C	result[0B]=0x00000000
+. ABS_OFFSET=0x00000030	result[0C]=0x00000000
+. ABS_OFFSET=0x00000034	result[0D]=0x00000000
+. ABS_OFFSET=0x00000038	result[0E]=0x00000010
+. ABS_OFFSET=0x0000003C	result[0F]=0x00000011
+. ABS_OFFSET=0x00000040	result[10]=0x00000011
+. ABS_OFFSET=0x00000044	result[11]=0x00000011
+. ABS_OFFSET=0x00000048	result[12]=0x00000011
+. ABS_OFFSET=0x0000004C	result[13]=0x00000011
+. ABS_OFFSET=0x00000050	result[14]=0x00000011
+. ABS_OFFSET=0x00000054	result[15]=0x00000011
+. ABS_OFFSET=0x00000058	result[16]=0x00000011
+. ABS_OFFSET=0x0000005C	result[17]=0x00000011
+. ABS_OFFSET=0x00000060	result[18]=0x00000011
+. ABS_OFFSET=0x00000064	result[19]=0x00000011
+. ABS_OFFSET=0x00000068	result[1A]=0x00000011
+. ABS_OFFSET=0x0000006C	result[1B]=0x00000011
+. ABS_OFFSET=0x00000070	result[1C]=0x00000011
+. ABS_OFFSET=0x00000074	result[1D]=0x00000011
+. ABS_OFFSET=0x00000078	result[1E]=0x00000011
+. ABS_OFFSET=0x0000007C	result[1F]=0x00000011
+
+
+BYTE 0: 
+	Start:		 HC=0x00 ABS=0x00
+	End:		 HC=0x02 ABS=0x38
+	Mean:		 HC=0x01 ABS=0x1C
+	End-0.5*tCK:	 HC=0x01 ABS=0x38
+	Final:		 HC=0x01 ABS=0x38
+BYTE 1: 
+	Start:		 HC=0x00 ABS=0x00
+	End:		 HC=0x02 ABS=0x34
+	Mean:		 HC=0x01 ABS=0x1A
+	End-0.5*tCK:	 HC=0x01 ABS=0x34
+	Final:		 HC=0x01 ABS=0x34
+
+DQS calibration MMDC0 MPDGCTRL0 = 0x01340138, MPDGCTRL1 = 0x00000000
+
+Note: Array result[] holds the DRAM test result of each byte.  
+      0: test pass.  1: test fail  
+      4 bits respresent the result of 1 byte.    
+      result 01:byte 0 fail. 
+      result 11:byte 0, 1 fail. 
+
+Starting Read calibration...
+
+ABS_OFFSET=0x00000000	result[00]=0x01
+ABS_OFFSET=0x04040404	result[01]=0x01
+ABS_OFFSET=0x08080808	result[02]=0x00
+ABS_OFFSET=0x0C0C0C0C	result[03]=0x00
+ABS_OFFSET=0x10101010	result[04]=0x00
+ABS_OFFSET=0x14141414	result[05]=0x00
+ABS_OFFSET=0x18181818	result[06]=0x00
+ABS_OFFSET=0x1C1C1C1C	result[07]=0x00
+ABS_OFFSET=0x20202020	result[08]=0x00
+ABS_OFFSET=0x24242424	result[09]=0x00
+ABS_OFFSET=0x28282828	result[0A]=0x00
+ABS_OFFSET=0x2C2C2C2C	result[0B]=0x00
+ABS_OFFSET=0x30303030	result[0C]=0x00
+ABS_OFFSET=0x34343434	result[0D]=0x00
+ABS_OFFSET=0x38383838	result[0E]=0x00
+ABS_OFFSET=0x3C3C3C3C	result[0F]=0x00
+ABS_OFFSET=0x40404040	result[10]=0x00
+ABS_OFFSET=0x44444444	result[11]=0x00
+ABS_OFFSET=0x48484848	result[12]=0x00
+ABS_OFFSET=0x4C4C4C4C	result[13]=0x00
+ABS_OFFSET=0x50505050	result[14]=0x00
+ABS_OFFSET=0x54545454	result[15]=0x00
+ABS_OFFSET=0x58585858	result[16]=0x00
+ABS_OFFSET=0x5C5C5C5C	result[17]=0x00
+ABS_OFFSET=0x60606060	result[18]=0x10
+ABS_OFFSET=0x64646464	result[19]=0x10
+ABS_OFFSET=0x68686868	result[1A]=0x11
+ABS_OFFSET=0x6C6C6C6C	result[1B]=0x11
+ABS_OFFSET=0x70707070	result[1C]=0x11
+ABS_OFFSET=0x74747474	result[1D]=0x11
+ABS_OFFSET=0x78787878	result[1E]=0x11
+ABS_OFFSET=0x7C7C7C7C	result[1F]=0x11
+
+Byte 0: (0x08 - 0x64), middle value:0x36
+Byte 1: (0x00 - 0x5c), middle value:0x2e
+
+MMDC0 MPRDDLCTL = 0x40402E36
+
+Starting Write calibration...
+
+ABS_OFFSET=0x00000000	result[00]=0x11
+ABS_OFFSET=0x04040404	result[01]=0x10
+ABS_OFFSET=0x08080808	result[02]=0x10
+ABS_OFFSET=0x0C0C0C0C	result[03]=0x00
+ABS_OFFSET=0x10101010	result[04]=0x00
+ABS_OFFSET=0x14141414	result[05]=0x00
+ABS_OFFSET=0x18181818	result[06]=0x00
+ABS_OFFSET=0x1C1C1C1C	result[07]=0x00
+ABS_OFFSET=0x20202020	result[08]=0x00
+ABS_OFFSET=0x24242424	result[09]=0x00
+ABS_OFFSET=0x28282828	result[0A]=0x00
+ABS_OFFSET=0x2C2C2C2C	result[0B]=0x00
+ABS_OFFSET=0x30303030	result[0C]=0x00
+ABS_OFFSET=0x34343434	result[0D]=0x00
+ABS_OFFSET=0x38383838	result[0E]=0x00
+ABS_OFFSET=0x3C3C3C3C	result[0F]=0x00
+ABS_OFFSET=0x40404040	result[10]=0x00
+ABS_OFFSET=0x44444444	result[11]=0x00
+ABS_OFFSET=0x48484848	result[12]=0x00
+ABS_OFFSET=0x4C4C4C4C	result[13]=0x00
+ABS_OFFSET=0x50505050	result[14]=0x00
+ABS_OFFSET=0x54545454	result[15]=0x00
+ABS_OFFSET=0x58585858	result[16]=0x00
+ABS_OFFSET=0x5C5C5C5C	result[17]=0x01
+ABS_OFFSET=0x60606060	result[18]=0x11
+ABS_OFFSET=0x64646464	result[19]=0x11
+ABS_OFFSET=0x68686868	result[1A]=0x11
+ABS_OFFSET=0x6C6C6C6C	result[1B]=0x11
+ABS_OFFSET=0x70707070	result[1C]=0x11
+ABS_OFFSET=0x74747474	result[1D]=0x11
+ABS_OFFSET=0x78787878	result[1E]=0x11
+ABS_OFFSET=0x7C7C7C7C	result[1F]=0x11
+
+Byte 0: (0x04 - 0x58), middle value:0x2e
+Byte 1: (0x0c - 0x5c), middle value:0x34
+
+MMDC0 MPWRDLCTL = 0x4040342E
+
+
+   MMDC registers updated from calibration 
+
+   Write leveling calibration
+   MMDC_MPWLDECTRL0 ch0 (0x021b080c) = 0x00000000
+   MMDC_MPWLDECTRL1 ch0 (0x021b0810) = 0x00070007
+
+   Read DQS Gating calibration
+   MPDGCTRL0 PHY0 (0x021b083c) = 0x01340138
+   MPDGCTRL1 PHY0 (0x021b0840) = 0x00000000
+
+   Read calibration
+   MPRDDLCTL PHY0 (0x021b0848) = 0x40402E36
+
+   Write calibration
+   MPWRDLCTL PHY0 (0x021b0850) = 0x4040342E
+
+
+Success: DDR calibration completed!!!
